@@ -1,0 +1,21 @@
+name = "LAT"
+grammar = "lat"
+path_suffixes = ["lat"]
+line_comments = ["||?", "‖?", "||!", "‖!"]
+brackets = [
+    { start = "{", end = "}", close = true, newline = true },
+    { start = "[", end = "]", close = true, newline = true },
+    { start = "(", end = ")", close = true, newline = true },
+    { start = "|?", end = " |", close = true, newline = false, not_in = [
+        "comment",
+        "string",
+    ] },
+    { start = "|!", end = " |", close = true, newline = false, not_in = [
+        "comment",
+        "string",
+    ] },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = [
+        "comment",
+        "string",
+    ] },
+]
